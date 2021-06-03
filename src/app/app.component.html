@@ -1,3 +1,34 @@
 <p>My first exercise</p>
 <app-sucess></app-sucess>
 <app-warning></app-warning>
+
+<p>My second exercise</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      
+      <label>Username</label>
+      <input type="text" class="form-control" [(ngModel)]="username">
+      <p>{{ username }}</p>
+      <button
+        class="btn btn-primary"
+        [disabled]="username === ''"
+        (click)="username = ''">Reset User</button>
+    </div>
+  </div>
+</div>
+ 
+
+<p>My third exercise</p>
+<div class="col-xs-12">
+  
+  <hr>
+  <!--<button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button>-->
+  <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+  <p *ngIf="showSecretPass">Secret Password is Encripton123#</p>
+  <div
+    *ngFor="let log of logs"
+    [ngStyle]="{backgroundColor: log >= 10 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': log >= 10}"
+  >{{ logs }}</div>
+</div>

@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'exercise1';
+  username='';
+  showSecretPass = false;
+  logs = [];
+
+  onToggleDetails() {
+    this.showSecretPass = !this.showSecretPass;
+    this.logs.push(this.logs.length + 1);
+  }
+
 }
